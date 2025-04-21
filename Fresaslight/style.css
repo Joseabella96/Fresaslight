@@ -1,0 +1,323 @@
+/* Reset básico y fuentes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+  }
+  
+  body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #000000;
+  }
+  
+  /* Navbar */
+  #navbar {
+    background-color: #fbfbfb;
+    padding: 1rem;
+  }
+  
+  #navbar .nav-link {
+    color: red;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  #navbar .nav-link:hover {
+    color: green;
+  }
+  
+  #logo img {
+    height: 150px;
+  }
+
+  #logo img:hover{
+    transform: scale(1.08);
+  }
+  
+  /* Carousel */
+  .imagen-portada {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .imagen-portada img {
+    height: 80%; /* Imagen más pequeña por defecto */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease; /* Efecto suave */
+  }
+  
+  .imagen-portada img:hover {
+    transform: scale(1.06); 
+  }
+  
+  @media (max-width: 768px) {
+    .imagen-portada {
+      height: 300px;
+    }
+  
+    .imagen-portada img {
+      height: 75%;
+    }
+  }
+  /* Carousel */
+
+
+  /* Sobre Nosotros */
+  .container-nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .texto {
+    flex: 1;
+    max-width: 550px;
+    text-align: justify;
+  }
+
+  .imagen img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  }
+
+  .imagen img:hover{
+    transform: scale(1.01);
+  }
+
+  @media (min-width: 768px) {
+    .container-nosotros {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem; /* Menos espacio entre texto e imagen */
+    }
+
+    .texto {
+      padding-right: 1rem;
+    }
+  }
+/* Sobre nosotros */
+
+  /* Productos */
+  .producto {
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+    background: #fff8fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+  }
+
+  .producto:hover {
+    transform: scale(1.03);
+  }
+
+  .producto img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .producto p {
+    font-weight: 500;
+    color: #d81b60;
+  }
+ /* Productos */
+
+  
+  /* Footer */
+  .footer {
+    background-color: #858585a1;
+    color: white;
+    text-align: center;
+  }
+  
+  .footer .img-fluid1 {
+    max-width: 200px;
+    margin: 1rem auto;
+  }
+
+  .footer .img-fluid1:hover{
+    transform: scale(1.05);
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin: 0.5rem 1rem;
+  }
+  
+  .footer {
+    background-color: #fff0f5;
+    color: #333;
+  }
+
+  .footer .redes-sociales a i {
+    font-size: 1.8rem;
+    margin: 0 12px;
+    color: #555;
+   /* transition: transform 0.3s ease, color 0.3s ease;*/
+  }
+
+  .footer .redes-sociales a:hover i {
+    color: #d81b60; /* Cambia este color a tu color de marca si deseas */
+  }
+
+  .footer p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 576px) {
+    .footer .redes-sociales a i {
+      font-size: 1.5rem;
+      margin: 0 8px;
+    }
+  }
+  
+  
+  .footer .copyright {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  
+  /* Botón hacia arriba */
+  .arrow {
+    position: fixed;
+    bottom: 20px;  /* Coloca la flecha en la parte inferior */
+    right: 20px;   /* La coloca a la derecha */
+    background-color: #fff;  /* Fondo blanco para la flecha */
+    border-radius: 50%; /* Hace que el fondo sea redondeado */
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Agrega una sombra sutil */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animación de opacidad */
+    opacity: 0; /* Inicialmente invisible */
+    pointer-events: none; /* No interactúa con el ratón hasta que aparezca */
+  }
+  
+  .arrow.visible {
+    opacity: 1; /* Hace la flecha visible */
+    pointer-events: all; /* Permite la interacción con el ratón cuando es visible */
+  }
+  
+  .arrow:hover {
+    transform: scale(1.1); /* Aumenta un poco el tamaño al pasar el mouse */
+  }
+  
+  .arrow img {
+    display: block;
+    margin: 0 auto; /* Centra la flecha dentro del contenedor */
+  }
+  
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .nosotros .col-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    .carousel-inner img {
+      height: 300px;
+    }
+  
+    .event img {
+      height: 200px;
+    }
+  
+    .footer .img-fluid1 {
+      max-width: 150px;
+    }
+  }
+
+  /*index fin*/
+
+  /*productos*/
+  .producto-card {
+    border-radius: 10px;
+  }
+  .producto-card img {
+    height: 250px;
+    object-fit: contain;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: none;
+  }
+
+  .producto-card button {
+    margin-top: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .promo-card {
+    animation: pulsar 1.5s infinite; /* Activa la animación de palpitación de forma predeterminada */
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* Animación de palpitación */
+  @keyframes pulsar {
+    0% {
+      transform: scale(1); /* Tamaño normal */
+    }
+    50% {
+      transform: scale(1.05); /* Aumenta un poco el tamaño */
+    }
+    100% {
+      transform: scale(1); /* Vuelve al tamaño original */
+    }
+  }
+
+  /* Puedes agregar una sombra o cualquier estilo adicional si lo deseas */
+  .promo-card {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 576px) {
+    .producto-card img {
+      height: 200px;
+    }
+  }
+  /*productos*/
+
+  /*Contacto*/
+   .contact-section {
+      background-color: #fff0f5;
+      padding: 60px 20px;
+      border-radius: 10px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .contact-section h2 {
+      color: #d81b60;
+    }
+    .contact-section ul li i {
+      font-size: 1.2rem;
+      margin-right: 10px;
+    }
+    .contact-section a {
+      text-decoration: none;
+    }
+  /*Contacto*/
+
+
+  
