@@ -5,12 +5,26 @@
     box-sizing: border-box;
     font-family: 'Merriweather', serif;
   }
-  
-  body {
-    line-height: 1.6;
-    color: #333;
-    background-color: #000000;
-  }
+
+  /* === Paleta de colores personalizada === */
+:root {
+  --color-fresa: #FF5B85;
+  --color-crema: #FFF4F6;
+  --color-verde: #6BBF59;
+  --color-gris-oscuro: #2E2E2E;
+  --color-blanco: #FFFFFF;
+  --color-vainilla: #FFE5B4;
+  --color-rojo: var(--color-rojo)
+}
+
+/* === Estilos generales === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-crema);
+  color: var(--color-gris-oscuro);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
   
   /* Navbar */
   #navbar {
