@@ -69,6 +69,7 @@
           </a>
           <div class="card-body text-center">
             <h5 class="card-title">Fresas con crema light Con topping de chispas de granola</h5>
+            <p class="fw-bold text-success">$15.000 COP</p>
           </div>
         </div>
       </div>
@@ -81,6 +82,7 @@
           </a>
           <div class="card-body text-center">
             <h5 class="card-title">Fresas con yogur griego light Con granola artesanal.</h5>
+            <p class="fw-bold text-success">$17.000 COP</p>
           </div>
         </div>
       </div>
@@ -93,6 +95,7 @@
           </a>
           <div class="card-body text-center">
             <h5 class="card-title">Fresas con yogur griego y granola</h5>
+            <p class="fw-bold text-success">$12.000 COP</p>
           </div>
         </div>
       </div>
@@ -105,6 +108,7 @@
           </a>
           <div class="card-body text-center">
             <h5 class="card-title">Fresas con crema light y chocolate</h5>
+            <p class="fw-bold text-success">$14.000 COP</p>
           </div>
         </div>
       </div>
@@ -117,6 +121,7 @@
           </a>
           <div class="card-body text-center">
             <h5 class="card-title">Fresas con nata light y crujientes</h5>
+            <p class="fw-bold text-success">$11.000 COP</p>
           </div>
         </div>
       </div>
@@ -129,6 +134,7 @@
           </a>
           <div class="card-body text-center">
             <h5 class="card-title">Fresas con crema light con nuez moscada</h5>
+            <p class="fw-bold text-success">$13.000 COP</p>
           </div>
         </div>
       </div>
@@ -141,6 +147,7 @@
           </a>
           <div class="card-body text-center">
             <h5 class="card-title">Fresas con crema light, topping crocante y salsa de frutos rojos</h5>
+            <p class="fw-bold text-success">$14.000 COP</p>
           </div>
         </div>
       </div>
@@ -153,6 +160,7 @@
           </a>
           <div class="card-body text-center">
             <h5 class="card-title">Fresas con crema light, avellanas y salsa de cacao saludable</h5>
+            <p class="fw-bold text-success">$17.000 COP</p>
           </div>
         </div>
       </div>
@@ -165,7 +173,7 @@
           </a>
           <div class="card-body text-center">
             <h5 class="card-title">Fresas con crema light y semillas de girasol tostadas</h5>
-            <p class="fw-bold text-success">$12.000 COP</p>
+            <p class="fw-bold text-success">$15.000 COP</p>
           </div>
         </div>
       </div>
@@ -227,7 +235,7 @@
 
       </select>
       <input type="text" id="direccion" placeholder="Dirección o escribe 'Recoger'" class="form-control mb-3" required>
-      <select id="Metodo de pago" class="form-control mb 3" required>
+      <select id="pago" class="form-control mb 3" required>
         <option value="">Metodo de pago</option>
         <option value="Nequi">Nequi</option>
         <option value="Daviplata">Daviplata</option>
@@ -241,20 +249,33 @@
     </form>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     document.getElementById("pedidoForm").addEventListener("submit", function (e) {
       e.preventDefault();
-
+  
       const nombre = document.getElementById("nombre").value;
       const producto = document.getElementById("producto").value;
       const direccion = document.getElementById("direccion").value;
       const pago = document.getElementById("pago").value;
-
+  
       const mensaje = `Hola! Soy ${nombre}. Quiero pedir: ${producto}.\nDirección o modalidad: ${direccion}.\nMétodo de pago: ${pago}.`;
-      const numeroWhatsApp = "573005624981"; // Reemplaza con tu número real
+      const numeroWhatsApp = "573005624981";
       const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-
+  
       window.open(url, "_blank");
+  
+      // Alerta personalizada
+      Swal.fire({
+        icon: 'success',
+        title: '¡Pedido enviado!',
+        text: 'Tu pedido ha sido enviado por WhatsApp.',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#6BBF59'
+      });
+  
+      // Limpiar formulario
+      document.getElementById("pedidoForm").reset();
     });
   </script>
   
